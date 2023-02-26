@@ -1,35 +1,13 @@
 import React from 'react';
 import './App.css';
+import Technologies from './Technologies'
+import Header from './Header'
 
 function App() {
     return (
         <div>
             <Header/>
             <Technologies/>
-        </div>
-    )
-}
-
-function Header() {
-    return (
-        <div>
-            <a>Home </a>
-            <a>News </a>
-            <a>Feed </a>
-            <a>Messages </a>
-        </div>
-    )
-}
-
-function Technologies() {
-    return (
-        <div className="App">
-            <ul>
-                <li>css</li>
-                <li>html</li>
-                <li>js</li>
-                <li>react</li>
-            </ul>
         </div>
     )
 }
