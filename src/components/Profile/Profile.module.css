@@ -1,0 +1,9 @@
+.content {
+    grid-area: content;
+    background-color: cadetblue;
+    color: white;
+}
+
+.profile__img {
+    width: 800px;
+}
