@@ -4,7 +4,7 @@ import Posts from "./Posts/Posts";
 
 const Profile = () => {
     return (
-        <div className={s.content}>
+        <div>
             <div className={s.profile__img}>
                 <img src={require("./profile_bg.jpg")}/>
             </div>
