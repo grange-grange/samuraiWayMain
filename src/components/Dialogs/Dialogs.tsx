@@ -7,22 +7,22 @@ const Dialogs = () => {
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
                 <div className={s.dialog + ' ' + s.active}>
-                    Dima
+                    <NavLink to={"/dialogs/1"}>Dima</NavLink>
                 </div>
                 <div className={s.dialog}>
-                    Kolya
+                    <NavLink to={"/dialogs/2"}>Kolya</NavLink>
                 </div>
                 <div className={s.dialog}>
-                    Petya
+                    <NavLink to={"/dialogs/3"}>Petya</NavLink>
                 </div>
                 <div className={s.dialog}>
-                    Vasya
+                    <NavLink to={"/dialogs/4"}>Vasya</NavLink>
                 </div>
                 <div className={s.dialog}>
-                    Lena
+                    <NavLink to={"/dialogs/5"}>Lena</NavLink>
                 </div>
                 <div className={s.dialog}>
-                    Yulia
+                    <NavLink to={"/dialogs/6"}>Yulia</NavLink>
                 </div>
             </div>
             <div className={s.messages}>
