@@ -3,7 +3,8 @@ import s from "./Post.module.css";
 
 type PostPropsType = {
     message: string
-    likes: string
+    likesCount: number
+    id?: number
 }
 
 const Post: React.FC<PostPropsType> = (props) => {
@@ -12,7 +13,7 @@ const Post: React.FC<PostPropsType> = (props) => {
             <img src={require("./avapost.jpg")}/>
             {props.message}
             <div>
-                <span>{props.likes} likes</span>
+                <span>{props.likesCount} like</span>
             </div>
         </div>
     );

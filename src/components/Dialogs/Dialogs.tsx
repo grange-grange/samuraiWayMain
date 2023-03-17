@@ -4,10 +4,10 @@ import {NavLink} from "react-router-dom";
 
 type DialogPropsType = {
     name: string
-    id: string
+    id: number
 }
 
-const Dialog = (props: DialogPropsType) => {
+const Dialog: React.FC<DialogPropsType> = (props) => {
     let path = `/dialogs/${props.id}`
 
     return (
@@ -19,29 +19,45 @@ const Dialog = (props: DialogPropsType) => {
 
 type MessagePropsType = {
     message: string
+    id?: number
 }
 
-const Message = (props: MessagePropsType) => {
+const Message: React.FC<MessagePropsType> = (props) => {
     return (
         <div className={s.message}>{props.message}</div>
     )
 }
 
 const Dialogs = () => {
+
+
+    let dialogsData = [
+        {id: 1, name: 'Dima'},
+        {id: 2, name: 'Kolya'},
+        {id: 3, name: 'Petya'},
+        {id: 4, name: 'Vasya'},
+        {id: 5, name: 'Lena'},
+        {id: 6, name: 'Yulia'}
+    ]
+
+    let messagesData = [
+        {id: 1, message: "yo"},
+        {id: 2, message: "hi"},
+        {id: 3, message: "bye"}
+    ]
+
+
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-                <Dialog name={"Dima"} id={"1"}/>
-                <Dialog name={"Kolya"} id={"2"}/>
-                <Dialog name={"Petya"} id={"3"}/>
-                <Dialog name={"Vasya"} id={"4"}/>
-                <Dialog name={"Lena"} id={"5"}/>
-                <Dialog name={"Yulia"} id={"6"}/>
+                <Dialog name={dialogsData[0].name} id={dialogsData[0].id}/>
+                <Dialog name={dialogsData[1].name} id={dialogsData[1].id}/>
+
             </div>
             <div className={s.messages}>
-                <Message message={"yo"} />
-                <Message message={"hi"} />
-                <Message message={"bye"} />
+                <Message message={messagesData[0].message}/>
+                <Message message={messagesData[1].message}/>
+                <Message message={messagesData[2].message}/>
             </div>
         </div>
     );
