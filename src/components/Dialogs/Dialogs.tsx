@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './Dialogs.module.css'
 import {NavLink} from "react-router-dom";
+import {message} from "antd";
 
 type DialogPropsType = {
     name: string
@@ -31,7 +32,7 @@ const Message: React.FC<MessagePropsType> = (props) => {
 const Dialogs = () => {
 
 
-    let dialogsData = [
+    let dialogs = [
         {id: 1, name: 'Dima'},
         {id: 2, name: 'Kolya'},
         {id: 3, name: 'Petya'},
@@ -39,25 +40,22 @@ const Dialogs = () => {
         {id: 5, name: 'Lena'},
         {id: 6, name: 'Yulia'}
     ]
-
-    let messagesData = [
+    let messages = [
         {id: 1, message: "yo"},
         {id: 2, message: "hi"},
         {id: 3, message: "bye"}
     ]
 
+    let dialogsElements = dialogs.map((d) => <Dialog name={d.name} id={d.id}/>)
+    let messagesElements = messages.map((m) => <Message message={m.message}/>)
 
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-                <Dialog name={dialogsData[0].name} id={dialogsData[0].id}/>
-                <Dialog name={dialogsData[1].name} id={dialogsData[1].id}/>
-
+                {dialogsElements}
             </div>
             <div className={s.messages}>
-                <Message message={messagesData[0].message}/>
-                <Message message={messagesData[1].message}/>
-                <Message message={messagesData[2].message}/>
+                {messagesElements}
             </div>
         </div>
     );
